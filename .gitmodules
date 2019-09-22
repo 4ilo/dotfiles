@@ -7,9 +7,9 @@
 [submodule ".vim/pack/plugins/start/lightline"]
 	path = .vim/pack/plugins/start/lightline
 	url = https://github.com/itchyny/lightline.vim
-[submodule ".vim/pack/plugins/start/ctrlp.vim"]
-	path = .vim/pack/plugins/start/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
 [submodule ".vim/pack/plugins/start/vim-surround"]
 	path = .vim/pack/plugins/start/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule ".vim/pack/plugins/start/ctrlp.vim"]
+	path = .vim/pack/plugins/start/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim

@@ -2,7 +2,7 @@
 if [ $# -ne 2 ]; then
     echo "Usage: addvimplugin <plugin git url> <plugin name>" >&2
     exit 1
-fi  
+fi
 
 cd ~
 yadm submodule init

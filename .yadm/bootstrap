@@ -7,3 +7,6 @@ yadm submodule update --recursive --init
 
 echo "Updating the yadm repo URL for SSH"
 yadm remote set-url origin "git@github.com:4ilo/dotfiles.git"
+
+echo "Installing zsh-syntax-highlighting"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting

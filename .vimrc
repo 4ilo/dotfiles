@@ -48,3 +48,5 @@ set history=10000
 colorscheme atom-dark-256
 set laststatus=2
 
+" Remap CtrlP to ;
+map ; :CtrlP<CR>

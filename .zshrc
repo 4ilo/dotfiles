@@ -70,7 +70,13 @@ DEFAULT_USER="olivier"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    colored-man-pages
+    vi-mode
+
+    zsh-syntax-highlighting             # Must be last plugin!
+)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -16,6 +16,7 @@ syntax enable
 
 " set autoindent on
 set autoindent
+set cindent
 
 " show commands as you type them
 set showcmd

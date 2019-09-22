@@ -50,3 +50,5 @@ set laststatus=2
 
 " Remap CtrlP to ;
 map ; :CtrlP<CR>
+
+map ,<space> :nohlsearch<CR>

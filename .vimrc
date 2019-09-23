@@ -30,6 +30,12 @@ set tabstop=4
 " how many spaces are inserted when pressing tab
 set softtabstop=4
 
+" Tabs for makefiles
+autocmd FileType make setlocal noexpandtab
+
+" Indent c files with 8 spaces
+autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8
+
 " Line numbers
 set number
 "set relativenumber

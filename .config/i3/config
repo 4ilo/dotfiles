@@ -184,6 +184,9 @@ exec_always numlockx    # Enable numlock on startup
 for_window [class="^.*"] border pixel 2
 new_window 1pixel
 
+# Battery warning
+exec --no-startup-id i3-battery-popup -n
+
 # Gaps
 smart_gaps on
 gaps inner 5

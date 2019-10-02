@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/opt/tools/gcc-arm-none-eabi/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/olivier/.oh-my-zsh"

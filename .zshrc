@@ -73,7 +73,6 @@ DEFAULT_USER="olivier"
 plugins=(
     git
     colored-man-pages
-    vi-mode
 
     zsh-syntax-highlighting             # Must be last plugin!
 )

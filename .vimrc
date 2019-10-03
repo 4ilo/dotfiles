@@ -61,7 +61,7 @@ colorscheme atom-dark-256
 set laststatus=2
 
 " Ctrl-p path settings
-let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_working_path_mode = '0'
 
 map ,<space> :nohlsearch<CR>
 

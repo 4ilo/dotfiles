@@ -108,3 +108,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias sshovde="ssh olivier@95.179.159.74"
 
+UNCRUSTIFY_CONFIG=.uncrustify

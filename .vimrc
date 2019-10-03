@@ -41,11 +41,17 @@ set number
 "set relativenumber
 set hidden
 
+set list
+set listchars=tab:>-
+
 " Search optimalisations
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
 
 set undofile
 set undodir=~/.vim/undodir
@@ -54,7 +60,12 @@ set history=10000
 colorscheme atom-dark-256
 set laststatus=2
 
-" Remap CtrlP to ;
-"map ; :CtrlP<CR>
+" Ctrl-p path settings
+let g:ctrlp_working_path_mode = 'rw'
 
 map ,<space> :nohlsearch<CR>
+
+set scrolloff=3
+
+" Add matching {
+inoremap {<cr> {<cr>}<esc>O

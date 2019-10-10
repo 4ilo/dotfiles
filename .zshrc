@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:/opt/tools/gcc-arm-none-eabi/bin
+export PATH=$PATH:/opt/tools/gcc-arm-none-eabi/bin:/home/olivier/.gem/ruby/2.6.0/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/olivier/.oh-my-zsh"

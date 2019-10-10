@@ -57,6 +57,9 @@ set undofile
 set undodir=~/.vim/undodir
 set history=10000
 
+" Disable swapfiles
+set noswapfile
+
 colorscheme atom-dark-256
 set laststatus=2
 

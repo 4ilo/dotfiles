@@ -72,3 +72,6 @@ set scrolloff=3
 
 " Add matching {
 inoremap {<cr> {<cr>}<esc>O
+
+" Autogenerate ctags
+au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &

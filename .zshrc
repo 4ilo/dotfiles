@@ -107,4 +107,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias sshovde="ssh olivier@95.179.159.74"
 
-UNCRUSTIFY_CONFIG=.uncrustify
+DEV_PATH=/home/olivier/dev
+DL_PATH=/home/olivier/dev/dl
+STAGING_PATH=/home/olivier/dev/staging
+LINUX_PATH=/home/olivier/dev/linux
+BR_PATH=/home/olivier/dev/buildroot
+MNT_PATH=/home/olivier/dev/mnt

@@ -34,7 +34,7 @@ set softtabstop=4
 autocmd FileType make setlocal noexpandtab
 
 " Indent c files with 8 spaces
-autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8
+"autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8
 
 " Line numbers
 set number
@@ -74,4 +74,4 @@ set scrolloff=3
 inoremap {<cr> {<cr>}<esc>O
 
 " Autogenerate ctags
-au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+" au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &

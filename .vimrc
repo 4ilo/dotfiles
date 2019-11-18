@@ -70,8 +70,11 @@ map ,<space> :nohlsearch<CR>
 
 set scrolloff=3
 
-" Add matching {
+" Add matching { brackets
 inoremap {<cr> {<cr>}<esc>O
+
+" Use clipboard for yank and paste (needs gvim!)
+set clipboard=unnamedplus
 
 " Autogenerate ctags
 " au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &

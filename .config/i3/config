@@ -30,7 +30,8 @@ font pango:System San Francisco 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -170,8 +171,47 @@ bar {
 }
 
 # Custom bindings
-#bindsym $mod+shift+x exec i3lock -c 1A2B2B
-bindsym $mod+shift+x exec i3lock-fancy -t ""
+# Shutdown, reboot and lock
+set $Locker i3lock-fancy -t "" && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
+
+## Manual management of external displays
+# Set the shortcuts and what they do
+set $mode_display Ext Screen (h) HDMI ON, (y) HDMI OFF, (d) DP ON, (x) DP OFF
+mode "$mode_display" {
+    bindsym h exec --no-startup-id xrandr --output HDMI-1 --auto --above eDP-1, mode "default"
+    bindsym y exec --no-startup-id xrandr --output HDMI-1 --auto --off, mode "default"
+    bindsym d exec --no-startup-id xrandr --output DP-2 --auto --above eDP-1, mode "default"
+    bindsym x exec --no-startup-id xrandr --output DP-2 --auto --off, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+x mode "$mode_display"
+
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym $mod+z move workspace to output up
+
+# Lock screen
+bindsym $mod+shift+x exec $Locker
 
 # Set wallpaper
 exec_always feh --bg-scale /home/olivier/Images/wallpaper.png
@@ -194,3 +234,9 @@ gaps inner 5
 
 # 2 finger clicking
 exec xinput set-prop "SYNA306A:00 06CB:CD0B Touchpad" "libinput Click Method Enabled" 0 1
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%   # Increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%   # Decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle    # Mute mic

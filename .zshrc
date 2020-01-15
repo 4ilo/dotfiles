@@ -72,6 +72,7 @@ DEFAULT_USER="olivier"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    fzf
     colored-man-pages
 
     zsh-syntax-highlighting             # Must be last plugin!

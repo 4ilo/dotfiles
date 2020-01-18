@@ -12,7 +12,7 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 
 " enable syntax highlighting
-syntax enable
+syntax on
 
 " set autoindent on
 set autoindent
@@ -60,8 +60,11 @@ set history=10000
 " Disable swapfiles
 set noswapfile
 
-colorscheme atom-dark-256
+" Colorsheme onedark.vim plugin
+packadd! onedark.vim
+colorscheme onedark
 set laststatus=2
+set termguicolors
 
 " Ctrl-p path settings
 let g:ctrlp_working_path_mode = '0'

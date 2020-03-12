@@ -11,34 +11,27 @@ noremap <Right> <NOP>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 
-" enable syntax highlighting
-syntax on
 
 " set autoindent on
-set autoindent
-set cindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smartindent
+set expandtab
 
 " show commands as you type them
 set showcmd
 
-" insert spaces when <Tab> is pressed (use <ctrl-V><Tab> to insert a real tab)
-set expandtab
-" number of columns text is indented with the reindent operations (< and >)
-set shiftwidth=4
-" how many columns a <Tab> character should span
-set tabstop=4
-" how many spaces are inserted when pressing tab
-set softtabstop=4
-
 " Tabs for makefiles
 autocmd FileType make setlocal noexpandtab
+autocmd Filetype bzl setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
+autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 smartindent
 
 " Indent c files with 8 spaces
 "autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8
 
 " Line numbers
 set number
-"set relativenumber
 set hidden
 
 set list
@@ -60,7 +53,8 @@ set history=10000
 " Disable swapfiles
 set noswapfile
 
-" Colorsheme onedark.vim plugin
+"colorscheme onedark
+syntax on
 packadd! onedark.vim
 colorscheme onedark
 set laststatus=2
@@ -71,13 +65,15 @@ let g:ctrlp_working_path_mode = '0'
 
 map ,<space> :nohlsearch<CR>
 
-set scrolloff=3
-
 " Add matching { brackets
 inoremap {<cr> {<cr>}<esc>O
 
 " Use clipboard for yank and paste (needs gvim!)
 set clipboard=unnamedplus
 
-" Autogenerate ctags
-" au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+let g:filetype_bazel="bzl"
+
+" Reformat json
+map ,r :%!jq .<CR>
+
+au BufNewFile,BufRead *.template set ft=jinja

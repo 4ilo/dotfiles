@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:/opt/tools/gcc-arm-none-eabi/bin:/home/olivier/.gem/ruby/2.6.0/bin
+export PATH=$PATH:/repo/devtools/bin:/home/hg/mercurial-scripts/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/olivier/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,4 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source .zsh_private
+export HGHOME=/home/hg
+export ISAM_SITE_OVERRIDE=Antwerp
+
+exec fish

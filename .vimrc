@@ -1,11 +1,17 @@
 " make sure not use vi compatibility mode
 set nocompatible
 
-" ditch arrow keys in visual and insert mode
-"inoremap <Left> <NOP>
-"inoremap <Right> <NOP>
-"inoremap <Up> <NOP>
-"inoremap <Down> <NOP>
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" ditch arrow keys in visual mode
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap <Up> <NOP>
@@ -55,7 +61,6 @@ set noswapfile
 
 "colorscheme onedark
 syntax on
-packadd! onedark.vim
 colorscheme onedark
 set laststatus=2
 set termguicolors
@@ -68,12 +73,12 @@ map ,<space> :nohlsearch<CR>
 " Add matching { brackets
 inoremap {<cr> {<cr>}<esc>O
 
-" Use clipboard for yank and paste (needs gvim!)
-set clipboard=unnamedplus
-
 let g:filetype_bazel="bzl"
 
 " Reformat json
 map ,r :%!jq .<CR>
 
 au BufNewFile,BufRead *.template set ft=jinja
+
+""""""""""""""""""""""""" COC
+source ~/.vim/coc.conf

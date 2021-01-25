@@ -8,7 +8,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " ditch arrow keys in visual mode
@@ -81,4 +82,4 @@ map ,r :%!jq .<CR>
 au BufNewFile,BufRead *.template set ft=jinja
 
 """"""""""""""""""""""""" COC
-source ~/.vim/coc.conf
+"source ~/.vim/coc.conf

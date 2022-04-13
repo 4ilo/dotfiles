@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -216,8 +216,10 @@ bindsym $mod+shift+x exec $Locker
 exec_always feh --bg-scale ~/Images/wallpaper.png
 
 # Remap caps lock to escape
-exec_always xmodmap -e "clear lock" #disable caps lock switch
-exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+set $caps_to_escape setxkbmap -option caps:escape
+exec_always $caps_to_escape
+bindsym $mod+Escape "exec $caps_to_escape"
+
 exec_always numlockx    # Enable numlock on startup
 
 # Remove window titles
@@ -226,9 +228,6 @@ new_window 1pixel
 
 # Battery warning
 exec --no-startup-id i3-battery-popup -n
-
-# Remap caps->esc
-exec --no-startup-id setxkbmap -option caps:escape
 
 # Gaps
 smart_gaps on

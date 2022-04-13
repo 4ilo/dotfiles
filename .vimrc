@@ -80,5 +80,10 @@ map ,r :%!jq .<CR>
 
 au BufNewFile,BufRead *.template set ft=jinja
 
+" Fix colors in alacritty
+if &term == "alacritty"
+      let &term = "xterm-256color"
+endif
+
 """"""""""""""""""""""""" COC
 source ~/.vim/coc.conf

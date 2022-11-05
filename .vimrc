@@ -8,7 +8,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " ditch arrow keys in visual mode
@@ -86,4 +86,4 @@ if &term == "alacritty"
 endif
 
 """"""""""""""""""""""""" COC
-source ~/.vim/coc.conf
+"source ~/.vim/coc.conf
